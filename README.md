@@ -34,5 +34,3 @@ Our Electronic Schematics and Codes we use are in [**SRC folder.**](https://gith
 ## Demonstration Videos
 
 Go to [**this youtube channel**]("Insertar link del youtube")
-
-Go to [*this youtube channel*]("Insertar link del youtube")
