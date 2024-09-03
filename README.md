@@ -31,13 +31,12 @@ To control direction, we use a Servo attached a 3D printed piece with two wheels
 
 Our Electronic Schematics and Codes we use are in [**SRC folder.**](https://github.com/Gallarfrox/WRO-FE-XPRIT-2024/tree/fe686a653da6ce5ed55e57e9bf3dd3e55d9c889c/SRC)
 ## Team Photos
-## Team Photos
 
 ### Formal Photo:
-![Formal-Photo](Images/Formal Photo.jpg)
+![OPhoto](Images/Formal Photo.jpg)
 
 ### Funny Photo:
-![Funny-Photo](Images/Funny Photo.jpg)
+![FPhoto](Images/Funny Photo.jpg)
 ## Demonstration Videos
 
 Go to [**this youtube channel**](https://www.youtube.com/watch?v=dQw4w9WgXcQ) to see demostration videos of the robot working on the circuit
