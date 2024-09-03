@@ -38,4 +38,4 @@ We have a funny photo in [**Images Folder**](https://github.com/Gallarfrox/WRO-F
 
 ## Demonstration Videos
 
-Go to [**this youtube channel**](https://youtube.com/@xprit_robotics?si=dhm_ktdyuf9bD-lI) to see demostration videos of the robot working on the circuit
+Vist to [**this youtube channel**](https://youtube.com/@xprit_robotics?si=dhm_ktdyuf9bD-lI) to see demostration videos of the robot working on the circuit
