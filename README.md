@@ -4,13 +4,13 @@
 ## Introduction
 We are a team from Argentina participating in the Future Engineer Category at the World Robot Olympiad (WRO). Our team, XpriT Robotics, is composed of Franco Gallardo and Nahuel Cabaña.
 ## Index
-* [**Contents**](##Contents)
-* [**Chassis**](##Chassis)
-* [**Power Supply**](##Power_Supply)
-* [**Mobility And Direction**](##Mobility_And_Direction)
-* [**Electronic Schematics**](##Schematic)
-* [**Team Photos**](##Photos)
-* [**Demonstration Videos**](##Demonstration_Videos)
+* [**Contents**](#Contents)
+* [**Chassis**](#Chassis)
+* [**Power Supply**](#Power_Supply)
+* [**Mobility And Direction**](#Mobility_And_Direction)
+* [**Electronic Schematics**](#Schematic)
+* [**Team Photos**](#Photos)
+* [**Demonstration Videos**](#Demonstration_Videos)
 ## Contents
  * `3D Design` Contains 3D models of the robot in .STL format, ready for 3D printing.
  * `Edge Impulse` Includes obstacle images captured with the ESP32 Cam for training the machine learning model using Edge Impulse.
