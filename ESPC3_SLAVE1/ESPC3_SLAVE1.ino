@@ -1,9 +1,14 @@
+#include <Servo.h>
+
 #include <Wire.h>
+
+Servo direccion;
 
 int servoAngle = 0;
 int motorSpeed = 0;
 
 void setup() {
+  direccion.attach(5);
   Wire.begin(0x08);              // Configura el esclavo I2C con la dirección 0x08
   Wire.onReceive(receiveEvent);  // Asocia la función de recepción de datos
   Serial.begin(115200);
@@ -16,7 +21,11 @@ void loop() {
   Serial.print("Velocidad del motor: ");
   Serial.println(motorSpeed);
   
-  delay(1000); // Espera para evitar bloquear el programa
+  delay(10); // Espera para evitar bloquear el programa
+
+  Motor(motorSpeed);
+  direccion.write(servoAngle);
+  
 }
 
 void receiveEvent(int howMany) {
