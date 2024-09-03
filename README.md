@@ -34,10 +34,10 @@ Our Electronic Schematics and Codes we use are in [**SRC folder.**](https://gith
 ## Team Photos
 
 ### Formal Photo:
-![Formal Photo](Images/Formal Photo.jpg)
+![Formal-Photo](Images/Formal Photo.jpg)
 
 ### Funny Photo:
-![Funny Photo](Images/Funny Photo.jpg)
+![Funny-Photo](Images/Funny Photo.jpg)
 ## Demonstration Videos
 
 Go to [**this youtube channel**](https://www.youtube.com/watch?v=dQw4w9WgXcQ) to see demostration videos of the robot working on the circuit
