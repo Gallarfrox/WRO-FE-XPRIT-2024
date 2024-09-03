@@ -3,13 +3,13 @@
 ## Introduction
 We are a Team From Argentina who Participate in Future Enginner Category. Formed by Franco Gallardo and Nahuel Cabaña.
 ## Index
-* [*Contents*](##Contents)
-* [*Chasis*](##Chasis)
-* [*Power Supply*](##Power_Supply)
-* [*Mobility And Direction*](##Mobility_And_Direction)
-* [*Electronic Schematics*](##Schematic)
-* [*Team Photos*](##Photos)
-* [*Demostration Videos*](##Demostration_Videos)
+* [*Contents*](#Contents)
+* [*Chasis*](#Chasis)
+* [*Power Supply*](#Power-Supply)
+* [*Mobility And Direction*](#Mobility-And-Direction)
+* [*Electronic Schematics*](#Schematic)
+* [*Team Photos*](#Team-Photos)
+* [*Demostration Videos*](#Demostration-Videos)
 ## Contents
  * 3D Design 3D models of the robot in .Stl format.
  * Edge Impulse Contains Obstacles Photos taked with esp32 Cam for Machine Learning training with Edge Impulse
