@@ -2,13 +2,21 @@
 
 #include <Wire.h>
 
-Servo direccion;
+Servo myservo = Servo();
 
 int servoAngle = 0;
 int motorSpeed = 0;
 
+
+#define pwm 4
+#define m1 3
+#define m2 2
+
+
+const int servoPin1 = 2;
+
 void setup() {
-  direccion.attach(5);
+  
   Wire.begin(0x08);              // Configura el esclavo I2C con la dirección 0x08
   Wire.onReceive(receiveEvent);  // Asocia la función de recepción de datos
   Serial.begin(115200);
@@ -24,7 +32,7 @@ void loop() {
   delay(10); // Espera para evitar bloquear el programa
 
   Motor(motorSpeed);
-  direccion.write(servoAngle);
+  myservo.write(servoPin1, servoAngle, 70, 0.0);
   
 }
 
@@ -43,5 +51,17 @@ void receiveEvent(int howMany) {
       servoAngle = receivedData.substring(0, delimiterIndex).toInt(); // Extrae y convierte el ángulo
       motorSpeed = receivedData.substring(delimiterIndex + 1).toInt(); // Extrae y convierte la velocidad
     }
+  }
+}
+
+void Motor(int vel){
+  if (vel < 0){
+    digitalWrite(m1, LOW);
+    digitalWrite(m2, HIGH);
+    analogWrite(pwm,abs(vel));
+  }else{
+    digitalWrite(m1, HIGH);
+    digitalWrite(m2, LOW);
+    analogWrite(pwm,abs(vel));
   }
 }

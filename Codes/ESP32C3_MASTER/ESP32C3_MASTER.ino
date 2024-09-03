@@ -13,8 +13,8 @@ const int XSHUT3 = 13;  //Sensor3 Pin XSHUT
 
 //Iniciamos Variables
 
-int servoAngle = 90;   // Grados del servomotor
-int motorSpeed = 0;  // Velocidad del motor
+int servoAngle = 90;   // Grados del servomotor  max -> 145 min -> 35
+int motorSpeed = 250;  // Velocidad del motor
 
 void setup() {
   Wire.begin(); // Inicia el maestro I2C
@@ -60,6 +60,13 @@ void loop() {
   int sen1 = sensor1.readRangeContinuousMillimeters();
   int sen2 = sensor2.readRangeContinuousMillimeters();
   int sen3 = sensor3.readRangeContinuousMillimeters();
+
+  Serial.print("Right Sensor: ");
+  Serial.print(sen1);
+  Serial.print("Middle Sensor: ");
+  Serial.print(sen3);
+  Serial.print("Left Sensor: ");
+  Serial.println(sen2);
   
   String dataToSend = String(ControlAngular(sen1, sen2, sen3)) + "," + String(motorSpeed);
   
@@ -69,7 +76,7 @@ void loop() {
 
   Serial.println("Datos enviados al esclavo: " + dataToSend);
   
-  delay(1000); // Espera 1 segundo antes de enviar el siguiente mensaje
+  delay(10); // Espera 1 segundo antes de enviar el siguiente mensaje
 }
 
 
