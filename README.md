@@ -26,7 +26,8 @@ We are a team from Argentina participating in the Future Engineer Category at th
 The power supply utilized is a 370mAh 11.1V Li-Po battery. Additionally, we employ an LM7805 voltage regulator to stabilize the power supplied to our boards and microcontrollers.
 ## Mobility And Direction
 
-To control direction, we use a Servo attached a 3D printed piece with two wheels in the sides. For Forward and Backwards movement we use a "L" shaped dc Motor.
+To control direction, 
+Our robot is designed with one DC motor and a single servo motor, chosen for their ease of replacement in Argentina also for its easy implementation. We use a custom 3D-printed part to enhance the steering of the front wheels, using the Ackerman Method for optimal maneuverability. The two wheels are directly attached to the DC motor, creating a compact and agile design. The robot follows the circuit’s external walls, ensuring an optimal turning radius and quick response time.
 ## Electronic Schematics
 
 Our Electronic Schematics and Codes we use are in [**SRC folder.**](https://github.com/Gallarfrox/WRO-FE-XPRIT-2024/tree/fe686a653da6ce5ed55e57e9bf3dd3e55d9c889c/SRC)
