@@ -8,15 +8,18 @@ int servoAngle = 0;
 int motorSpeed = 0;
 
 
-#define pwm 4
+#define PWM 4
 #define m1 3
 #define m2 2
 
 
-const int servoPin1 = 2;
+const int servoPin1 = 1;
 
 void setup() {
-  
+  pinMode(m1, OUTPUT);
+  pinMode(m2, OUTPUT);
+  pinMode(PWM, OUTPUT);
+  delay(200);
   Wire.begin(0x08);              // Configura el esclavo I2C con la dirección 0x08
   Wire.onReceive(receiveEvent);  // Asocia la función de recepción de datos
   Serial.begin(115200);
@@ -27,12 +30,12 @@ void loop() {
   Serial.print("Ángulo del servomotor: ");
   Serial.println(servoAngle);
   Serial.print("Velocidad del motor: ");
-  Serial.println(motorSpeed);
+  Serial.println(motorSpeed); 
   
   delay(10); // Espera para evitar bloquear el programa
 
   Motor(motorSpeed);
-  myservo.write(servoPin1, servoAngle, 70, 0.0);
+  myservo.write(servoPin1, servoAngle, 150, 0.0);
   
 }
 
@@ -58,10 +61,10 @@ void Motor(int vel){
   if (vel < 0){
     digitalWrite(m1, LOW);
     digitalWrite(m2, HIGH);
-    analogWrite(pwm,abs(vel));
+    analogWrite(PWM,abs(vel));
   }else{
     digitalWrite(m1, HIGH);
     digitalWrite(m2, LOW);
-    analogWrite(pwm,abs(vel));
+    analogWrite(PWM,abs(vel));
   }
 }
