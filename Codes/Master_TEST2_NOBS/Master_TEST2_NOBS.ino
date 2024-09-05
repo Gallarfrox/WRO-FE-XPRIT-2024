@@ -200,9 +200,7 @@ void selLado (int sen1, int sen2, int sen3) { //the order of Sensors are Right, 
   if (Mode == 2) {
 
   }
-  if (wallCounter > 12){
-    TurnDistance =  TurnDistance * 2;
-    }
+
   if (wallCounter >= 13) {
     motorSpeed = 0;
     servoAngle = 90;
