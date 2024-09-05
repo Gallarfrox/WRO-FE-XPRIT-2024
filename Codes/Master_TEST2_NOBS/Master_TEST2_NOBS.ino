@@ -22,9 +22,11 @@ const int XSHUT2 = 3;  // Sensor2 Pin XSHUT
 const int XSHUT3 = 2;  // Sensor3 Pin XSHUT
 
 // Adjustable Variables
-int TurnDistance = 400;
+int interWall = 3200;       //Modificate the time between corners 
+int TurnDistance = 380;
 int servoAngle = 90;
 int motorSpeed = 0;
+int TurnTime = 1000;
 
 // Non-Adjustable Variables
 int wallSen = 0;
@@ -32,6 +34,7 @@ int TurnDirection = 0;
 int Mode = 0;
 long int wallTime = 0;
 int wallCounter = 0;
+long int turningTime = 0;
 
 void setup() {
   Serial.begin(115200);
@@ -144,10 +147,17 @@ void selLado (int sen1, int sen2, int sen3) { //the order of Sensors are Right, 
       } else if ((sen3 < TurnDistance)) {
         wallSen = 1;
         motorSpeed = 250;
-        servoAngle = 45;
+        turningTime = millis() + TurnTime;
+        while (turningTime > millis()){
+           servoAngle = 45;
+           String mensaje = String(servoAngle) + "," + String(motorSpeed);
+  Wire.beginTransmission(ESP32_SLAVE_ADDRESS);
+  Wire.print(mensaje);
+  Wire.endTransmission();
+        }
       }
       if ((wallSen == 1) && (sen3 > TurnDistance)) {
-        servoAngle = map(sen1, 30, 300, 55, 125);
+        servoAngle = map(sen1, 50, 350, 65, 115);
         if (servoAngle < 55) servoAngle = 55;
         if (servoAngle > 125) servoAngle = 125;
       }
@@ -163,10 +173,17 @@ void selLado (int sen1, int sen2, int sen3) { //the order of Sensors are Right, 
       } else if ((sen3 < TurnDistance)) {
         wallSen = 1;
         motorSpeed = 255;
-        servoAngle = 135;
+        turningTime = millis() + TurnTime;
+        while (turningTime > millis()){
+           servoAngle = 135;
+           String mensaje = String(servoAngle) + "," + String(motorSpeed);
+  Wire.beginTransmission(ESP32_SLAVE_ADDRESS);
+  Wire.print(mensaje);
+  Wire.endTransmission();
+        }
       }
       if ((wallSen == 1) && (sen3 > TurnDistance)) {
-        servoAngle = map(sen2, 30, 300, 125, 55);
+        servoAngle = map(sen2, 50, 350, 115, 65);
         if (servoAngle < 55) servoAngle = 55;
         if (servoAngle > 125) servoAngle = 125;
       }
@@ -174,7 +191,7 @@ void selLado (int sen1, int sen2, int sen3) { //the order of Sensors are Right, 
 
     if ((sen3 < TurnDistance) && (wallTime < millis())) {
       wallCounter += 1;
-      wallTime = millis() + 2500;
+      wallTime = millis() + interWall;
     }
 
 
@@ -183,6 +200,9 @@ void selLado (int sen1, int sen2, int sen3) { //the order of Sensors are Right, 
   if (Mode == 2) {
 
   }
+  if (wallCounter > 12){
+    TurnDistance =  TurnDistance * 2;
+    }
   if (wallCounter >= 13) {
     motorSpeed = 0;
     servoAngle = 90;
