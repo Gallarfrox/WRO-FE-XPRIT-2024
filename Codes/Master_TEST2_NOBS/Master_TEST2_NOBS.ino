@@ -23,12 +23,12 @@ const int XSHUT3 = 2;  // Sensor3 Pin XSHUT
 
 // Adjustable Variables
 int interWall = 3200;       //Modificate the time between corners 
-int TurnDistance = 380;
-int servoAngle = 90;
-int motorSpeed = 0;
-int TurnTime = 1000;
+int TurnDistance = 380;     //This Variable regulate what distance between front wall and robot you need to Turn
+int TurnTime = 1000;        //This variable regulate how much time the robot Turn
 
 // Non-Adjustable Variables
+int servoAngle = 90;
+int motorSpeed = 0;
 int wallSen = 0;
 int TurnDirection = 0;
 int Mode = 0;
